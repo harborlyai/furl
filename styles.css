@@ -69,7 +69,7 @@ summary{cursor:pointer;font-weight:500}details p{margin-top:.6rem;max-width:46ch
 @media (max-width:760px){
 .split,.pd{grid-template-columns:1fr}
 .grid{grid-template-columns:1fr 1fr;gap:2rem 1rem}.feat .tile:nth-child(2){margin-top:0}
-.svc,footer .w{grid-template-columns:1fr}
+.svc,footer .w{grid-template-columns:minmax(0,1fr)}
 nav{gap:.9rem;font-size:.85rem}.logo{width:5rem}.ctl{gap:.8rem;font-size:.85rem}
 dl div{grid-template-columns:5rem 1fr}}
 @media (prefers-reduced-motion:reduce){.cta{transition:none}#cart{transition:none}}
@@ -157,3 +157,5 @@ dialog::backdrop{background:rgba(20,3,3,.6)}dialog h2{margin:1.2rem 0}
 @media (max-width:760px){.stk.on{display:flex}body.pc .wa{bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))}.rel .tile:nth-child(3){display:none}
 .cats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem}.cats .tile{flex:0 0 68%;scroll-snap-align:start}}
 html{overflow-x:clip}
+
+footer .w>*,.svc>*{min-width:0}.nl input{width:100%}input,select{max-width:100%}
