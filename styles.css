@@ -60,9 +60,9 @@ fieldset input:focus-visible+span{outline:2px solid currentColor;outline-offset:
 .info .btn{width:100%;margin-bottom:2rem;cursor:pointer}
 details{border-top:1px solid var(--ink);padding:1rem 0}details:last-child{border-bottom:1px solid var(--ink)}
 summary{cursor:pointer;font-weight:500}details p{margin-top:.6rem;max-width:46ch}
-#cart{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(26rem,100%);background:var(--bg);border-inline-start:1px solid var(--ink);padding:calc(1.5rem + env(safe-area-inset-top,0px)) 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;transform:translateX(calc(100% * var(--d,1)));visibility:hidden;transition:transform .4s,visibility .4s;z-index:20}
-[dir=rtl]{--d:-1}
-#cart.open{transform:none;visibility:visible}
+#cart{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(26rem,100%);background:var(--bg);border-inline-start:1px solid var(--ink);padding:calc(1.5rem + env(safe-area-inset-top,0px)) 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;clip-path:inset(0 0 0 100%);visibility:hidden;transition:clip-path .4s,visibility .4s;z-index:20}
+#cart.open,[dir=rtl] #cart.open{clip-path:inset(0);visibility:visible}
+[dir=rtl] #cart{clip-path:inset(0 100% 0 0)}
 #cart ul{list-style:none;margin:1.5rem 0;padding:0;flex:1;overflow:auto}
 #cart li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-top:1px solid var(--ink)}
 .tot{display:flex;justify-content:space-between;margin-bottom:1rem}
@@ -156,3 +156,4 @@ dialog::backdrop{background:rgba(20,3,3,.6)}dialog h2{margin:1.2rem 0}
 .mtm{position:relative;overflow:hidden}.mtm>*:not(.wm){position:relative}
 @media (max-width:760px){.stk.on{display:flex}body.pc .wa{bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))}.rel .tile:nth-child(3){display:none}
 .cats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem}.cats .tile{flex:0 0 68%;scroll-snap-align:start}}
+html{overflow-x:clip}
